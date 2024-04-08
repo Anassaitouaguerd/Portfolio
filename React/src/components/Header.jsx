@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Header() {
   return (
     <header data-scroll-index="0" className="header-area">
@@ -54,13 +52,7 @@ export default function Header() {
                         </a>
                         <ul className="sub_menu">
                           <li>
-                            <a href="portfolio-1.html">Portfolio 1</a>
-                          </li>
-                          <li>
-                            <a href="portfolio-2.html">Portfolio 2</a>
-                          </li>
-                          <li>
-                            <a href="portfolio-3.html">Portfolio 3</a>
+                            <a href="portfolio-1.html">Dashboard</a>
                           </li>
                         </ul>
                       </li>
