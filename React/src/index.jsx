@@ -2,9 +2,8 @@
 
 import ReactDOM from "react-dom";
 import App from "./App";
-
+import { BrowserRouter } from "react-router-dom";
 // styles
-import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/bootstrap.min.css";
 import "./assets/css/font-awesome.min.css";
@@ -14,5 +13,9 @@ import "./assets/css/slick.css";
 import "./assets/css/default.css";
 import "./assets/css/style.css";
 
-const Root = ReactDOM.createRoot(document.getElementById("root"));
-Root.render(<App />);
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);

@@ -1,13 +1,14 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 export default function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
+      </Routes>
     </div>
   );
 }

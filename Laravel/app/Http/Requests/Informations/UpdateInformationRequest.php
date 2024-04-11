@@ -23,14 +23,12 @@ class UpdateInformationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "first_name" => "string",
-            "Last_name" => "string",
-            "image" => "image|mimes:png,jpg,jpeg",
-            "email" => ["email", Rule::unique('users', 'email')],
-            "tel" => "min:10|max:16",
-            "github" => "url",
-            "gmail" => "url",
-            "linkdin" => "url",
+            "first_name" => "required|string",
+            "last_name" => "required|string",
+            "email" => ["required", "email"],
+            "tel" => "required",
+            "github" => "required",
+            "linkdin" => "required",
         ];
     }
 }

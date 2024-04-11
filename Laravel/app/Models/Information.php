@@ -12,12 +12,10 @@ class Information extends Model
     protected $collection = "informations";
     protected $fillable = [
         'first_name',
-        'Last_name',
-        'image',
+        'last_name',
         'email',
         'tel',
         'github',
-        'gmail',
         'linkdin',
     ];
 }

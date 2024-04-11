@@ -32,16 +32,7 @@ class InformationsController extends Controller
      */
     public function store(AddInformationRequest $request)
     {
-        Information::create([
-            'first_name' => $request->first_name,
-            'Last_name' => $request->Last_name,
-            'image' => $request->image, /////
-            'email' => $request->email,
-            'tel' => $request->tel,
-            'github' => $request->github,
-            'gmail' => $request->gmail,
-            'linkdin' => $request->linkdin
-        ]);
+        Information::create($request->validated());
         return response()->json(201);
     }
 

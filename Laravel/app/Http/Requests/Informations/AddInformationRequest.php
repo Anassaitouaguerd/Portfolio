@@ -24,13 +24,11 @@ class AddInformationRequest extends FormRequest
     {
         return [
             "first_name" => "required|string",
-            "Last_name" => "required|string",
-            "image" => "required|image|mimes:png,jpg,jpeg",
+            "last_name" => "required|string",
             "email" => ["required", "email", Rule::unique('users', 'email')],
-            "tel" => "required|min:10|max:16",
-            "github" => "required|url",
-            "gmail" => "required|url",
-            "linkdin" => "required|url",
+            "tel" => "required",
+            "github" => "required",
+            "linkdin" => "required",
         ];
     }
 }

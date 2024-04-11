@@ -5,7 +5,7 @@ import "./assets/css/app-saas.min.css";
 import "./assets/css/icons.min.css";
 
 // Import JS file
-import "assets/js/hyper-config.js";
+import "./assets/js/hyper-config.js";
 
 export default function Header() {
   return (
@@ -556,27 +556,6 @@ export default function Header() {
               <div className=" dropdown-header noti-title">
                 <h6 className="text-overflow m-0">Welcome !</h6>
               </div>
-
-              <a href="javascript:void(0);" className="dropdown-item">
-                <i className="mdi mdi-account-circle me-1"></i>
-                <span>My Account</span>
-              </a>
-
-              <a href="javascript:void(0);" className="dropdown-item">
-                <i className="mdi mdi-account-edit me-1"></i>
-                <span>Settings</span>
-              </a>
-
-              <a href="javascript:void(0);" className="dropdown-item">
-                <i className="mdi mdi-lifebuoy me-1"></i>
-                <span>Support</span>
-              </a>
-
-              <a href="javascript:void(0);" className="dropdown-item">
-                <i className="mdi mdi-lock-outline me-1"></i>
-                <span>Lock Screen</span>
-              </a>
-
               <a href="javascript:void(0);" className="dropdown-item">
                 <i className="mdi mdi-logout me-1"></i>
                 <span>Logout</span>
