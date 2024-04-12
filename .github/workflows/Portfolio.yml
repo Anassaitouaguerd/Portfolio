@@ -21,10 +21,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup PHP and MongoDB Extensions # Consider pre-built PHP image
+      - name: Install PHP extensions for MongoDB
         run: |
-          sudo apt-get update && sudo apt-get install -y libssl-dev
-          pecl install mongodb  # Double-check command and permissions
+          sudo apt-get install -y libssl-dev
+          sudo pecl install mongodb
           echo "extension=mongodb.so" | sudo tee -a $(php -r "echo php_ini_loaded_file();")
 
       - name: Install Composer Dependencies
