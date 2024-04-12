@@ -25,12 +25,15 @@ jobs:
         run: |
           sudo apt-get install -y libssl-dev
           sudo pecl install mongodb
-          echo "extension=mongodb.so" | sudo tee -a $(php -r "echo php_ini_loaded_file();")
+
+      - name: Update php.ini
+        run: |
+          echo "extension=mongodb.so" | sudo tee -a /etc/php/8.1/cli/php.ini
 
       - name: Install Composer Dependencies
         run: composer install
 
-      - name: Setup Laravel Environment (using secrets)
+      - name: Setup Laravel Environment
         run: |
           cp .env.example .env
           php artisan key:generate
