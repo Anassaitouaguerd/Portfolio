@@ -21,19 +21,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install PHP dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y libssl-dev  # Check package name and version
+
       - name: Install PHP extensions for MongoDB
         run: |
-          sudo apt-get install -y libssl-dev
           sudo pecl install mongodb
 
-      - name: Update php.ini
+      - name: Update php.ini (recommended)
         run: |
           echo "extension=mongodb.so" | sudo tee -a /etc/php/8.1/cli/php.ini
 
       - name: Install Composer Dependencies
         run: composer install
 
-      - name: Setup Laravel Environment
+      - name: Setup Laravel Environment (using secrets)
         run: |
           cp .env.example .env
           php artisan key:generate
