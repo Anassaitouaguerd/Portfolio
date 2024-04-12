@@ -21,6 +21,8 @@ class AddExperienceRequest extends FormRequest
      */
     public function rules(): array
     {
+        // $data = $this->request->all();
+        // dd($data);
         return [
             "name" => "required|string",
             "lieu" => "required|string",

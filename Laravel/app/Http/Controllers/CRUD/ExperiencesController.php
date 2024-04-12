@@ -32,7 +32,7 @@ class ExperiencesController extends Controller
     public function store(AddExperienceRequest $request)
     {
         Experience::create($request->validated());
-        return response()->json([], 201);
+        return response()->json(["response", "created"], 201);
     }
 
     /**
