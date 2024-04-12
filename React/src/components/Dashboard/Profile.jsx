@@ -1,30 +1,36 @@
+import meImage from "../../assets/images/Me/me.jpg";
+import curved0 from "./assets/img/curved-images/curved0.jpg";
 export default function Profile({ handlComponents }) {
   return (
     <div className="container-fluid">
       <div
         className="page-header min-height-300 border-radius-xl mt-4"
         style={{
-          backgroundImage: "url('./assets/img/curved-images/curved0.jpg')",
+          backgroundImage: `url(${curved0})`,
           backgroundPositionY: "50%",
         }}
       >
         <span className="mask bg-gradient-primary opacity-6"></span>
       </div>
-      <div className="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+      <div className="card card-body blur shadow-blur rounded-4  mx-4 mt-n6 overflow-hidden">
         <div className="row gx-4">
           <div className="col-auto">
-            <div className="avatar avatar-xl position-relative">
-              <img
-                src="../assets/img/bruce-mars.jpg"
-                alt="profile_image"
-                className="w-100 border-radius-lg shadow-sm"
-              />
-            </div>
+            <div
+              className="avatar avatar-xl position-relative"
+              style={{
+                backgroundImage: `url(${meImage})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
           </div>
           <div className="col-auto my-auto">
             <div className="h-100">
-              <h5 className="mb-1">Alec Thompson</h5>
-              <p className="mb-0 font-weight-bold text-sm">CEO / Co-Founder</p>
+              <h5 className="mb-1">Anass Ait Ouaguerd</h5>
+              <p className="mb-0 font-weight-bold text-sm">
+                Developer full stack
+              </p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
