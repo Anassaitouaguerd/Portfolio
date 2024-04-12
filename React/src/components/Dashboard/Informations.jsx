@@ -30,7 +30,7 @@ export default function Informations() {
     const email = document.getElementById("email").value;
     const tel = document.getElementById("telephone").value;
     const github = document.getElementById("github_link").value;
-    const linkdin = document.getElementById("github_link").value;
+    const linkdin = document.getElementById("linkedin_link").value;
     const data = {
       first_name: first_name,
       last_name: last_name,
@@ -56,6 +56,7 @@ export default function Informations() {
       console.error("Error:", error);
     }
   };
+  fetchData();
   // console.log(dataInformations);
   return (
     <div className="col-12 col-xl-4">
@@ -210,7 +211,7 @@ export default function Informations() {
                       <div className="form-group">
                         <label htmlFor="github_link">GitHub Link:</label>
                         <input
-                          type="url"
+                          type="text"
                           className="form-control"
                           id="github_link"
                           placeholder="Enter GitHub link"
@@ -225,11 +226,11 @@ export default function Informations() {
                       <div className="form-group">
                         <label htmlFor="linkedin_link">LinkedIn Link:</label>
                         <input
-                          type="url"
+                          type="text"
                           className="form-control"
                           id="linkedin_link"
                           placeholder="Enter LinkedIn link"
-                          name="linkedin_link"
+                          name="linkdin"
                           defaultValue={
                             dataInformations.length > 0
                               ? dataInformations[0].linkdin
