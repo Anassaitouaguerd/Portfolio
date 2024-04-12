@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  laravel-react-tests:
+  ci-tests:
     runs-on: ubuntu-latest
 
     services:
@@ -21,23 +21,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Backend setup
-      - name: Setup PHP and MongoDB
-        uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
-        with:
-          php-version: "latest"
-
-      - name: Install PHP extensions for MongoDB
-        run: sudo apt-get install -y libssl-dev && pecl install mongodb && echo "extension=mongodb.so" | sudo tee -a $(php -r "echo php_ini_loaded_file();")
+      - name: Setup PHP and MongoDB Extensions # Consider pre-built PHP image
+        run: |
+          sudo apt-get update && sudo apt-get install -y libssl-dev
+          pecl install mongodb  # Double-check command and permissions
+          echo "extension=mongodb.so" | sudo tee -a $(php -r "echo php_ini_loaded_file();")
 
       - name: Install Composer Dependencies
         run: composer install
 
-      - name: Setup Laravel Environment
+      - name: Setup Laravel Environment (using secrets)
         run: |
           cp .env.example .env
           php artisan key:generate
-          # Update .env file with MongoDB connection details
 
       - name: Run Laravel Migrations
         run: php artisan migrate --no-interaction
